@@ -24,7 +24,7 @@ body {
 
 /* .mainIMG{ */
 header{
-  background-image: url(https://github.com/shwg8986/MyHomePage/blob/main/image/webb-dark.png?raw=true);
+  background-image: url("https://github.com/shwg8986/MyHomePage/blob/main/image/webb-dark.png?raw=true");
   background-repeat: repeat-x;
   margin-bottom: 30px;
   padding: 100px;
