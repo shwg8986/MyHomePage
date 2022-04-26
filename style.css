@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+/* CSSのリセット */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color:white;
+  color: black;
+  /* font-family: "Avenir Next", "Hiragino Kaku Gothic ProN W3", sans-serif; */
+  /* font-family: 'Noto Serif JP',sans-serif; */
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* .mainIMG{ */
+header{
+  background-image: url(../image/webb-dark.png);
+  background-repeat: repeat-x;
+  margin-bottom: 30px;
+  padding: 100px;
+  /* font-family: 'Sacramento',cursive; */
+}
+
+.News p{
+  text-align: left;
+}
+
+.portfolio{
+  display: flex;
+  justify-content:flex-start;
+}
+
+.portfolio img{
+  margin-left: 50px;
+  /* padding-left: 30px; */
+  width: 100px;
+  height: 100px
+}
+
+.portfolio .item :hover {
+  border-radius: 100px;
+
+}
+
+
+.prof-info img{
+  position: absolute;
+  top: 390px;
+  right: 120px;
+  width: 300px;
+  height: 200px;
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 50px;
+  border-color:antiquewhite;
+}
+
+.prof h1{
+  display: block;
+  position: relative;
+  padding-top: 0px;
+  margin: auto;
+  margin-right: 30%;
+  color: aliceblue;
+}
+
+.prof p {
+  display: block;
+  position: relative;
+  padding-top: 10px;
+  margin: auto;
+  margin-right: 30%;
+  color: aliceblue;
+}
+
+.info {
+  text-align: center;
+  margin: auto;
+  padding: 40px;
+}
+
+.info h1 {
+  margin-top: 0px;
+  font-size: 35px;
+  color: #ab0f50;
+}
+
+.info h2{
+  margin-top: 10px;
+  font-size:30px;
+  color: #ab0f50;
+}
+
+.info h3{
+  font-size: 15px;
+  color: gray;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.info ul li {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.subinfo{
+  padding: 50px;
+  background: white;
+}
+
+.subinfo:nth-child(odd){
+  background: snow;
+}
+
+.subinfo table{
+  margin: auto;
+}
+
+.subinfo table th,td,li{
+  padding: 20px;
+}
+
+.Lang{
+  display: flex;
+  justify-content: space-around;
+}
+
+.Lang img{
+  /* width: 200px; */
+  height: 200px;
+}
+
+.Crypts{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+
+.Crypto img{
+  width: 150px;
+  height: 150px;
+}
+
+.gray{
+  color: gray;
+}
+
+
+
+
+
+footer{
+  background-color:#333333;
+  padding: 60px;
+}
+footer p{
+  text-align: center;
+  color: white;
+}
+
+
+
+/* jquery */
+
+.animation {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+  transform: translateY(100px);
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/*  */
+/* ハンバーガーメニュー */
+/* 位置を右上に固定 */
+#toggle {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+}
+
+/* ハンバーガーメニューの大きさ指定 */
+#toggle-box {
+  position: relative;
+  width: 36px;
+  height: 32px;
+  cursor: pointer;
+  color:#fff
+}
+
+#toggle-box>span {
+  width: 100%;
+  height: 1px;
+  left: 0;
+  display: block;
+  background: #ffffff;
+  position: absolute;
+  transition: transform .6s ease-in-out;
+}
+
+#toggle-box>span:nth-child(1) {
+  top: 0;
+}
+
+#toggle-box>span:nth-child(2) {
+  top: 50%;
+  transform: translatey(-50%);
+}
+
+#toggle-box>span:nth-child(3) {
+  bottom: 0;
+}
+
+/* ハンバーガーメニュークリックで、「×」マークにアニメーション */
+.is-open #toggle-box>span {
+  background: #fff;
+}
+
+.is-open #toggle-box>span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg) translatey(-50%);
+}
+
+.is-open #toggle-box>span:nth-child(2) {
+  width: 0;
+}
+
+.is-open #toggle-box>span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg) translatey(-50%);
+}
+
+/* 重なり順指定 */
+#toggle {
+  z-index: 1000;
+}
+
+#main {
+  position: relative;
+  z-index: 990;
+}
+
+/* 中身メニュー、初期は非表示 */
+#nav-content {
+  z-index: 900;
+  overflow: auto;
+  /* width: 100%; */
+  width: 80%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  right: 0;
+  text-align: center;
+
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* 透過指定 */
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+}
+
+#nav-content ul {
+  list-style: none;
+}
+
+#nav-content a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 30px 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+#nav-content a:hover {
+  opacity: 0.6;
+}
+
+/* is-openクラスが追加されると、メニューが表示される */
+.is-open {
+  overflow: hidden;
+}
+
+.is-open #nav-content {
+  z-index: 999;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.is-open #nav-content a {
+  pointer-events: auto;
+}
